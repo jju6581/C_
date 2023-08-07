@@ -1,0 +1,5 @@
+SQLCMD -S LOCALHOST\SQLEXPRESS -E
+CREATE DATABASE CookDB;
+USE CookDB;
+CREATE TABLE Town (id CHAR(20) not null, pwd CHAR(20) not null, tel CHAR(20) not null,birth CHAR(20) not null, primary key(id))
+CREATE TABLE Memo (id CHAR(20) not null, memo VARCHAR(255) not null, created_at DATETIME not null,FOREIGN KEY (id) REFERENCES Town(id))
